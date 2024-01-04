@@ -1,0 +1,32 @@
+name: "bert_kor_base1"
+platform: "onnxruntime_onnx"
+max_batch_size: 0  # 동적 배치 크기 지원
+input [
+  {
+    name: "input_ids"
+    data_type: TYPE_INT64
+    dims: [ -1, 512 ]  # 동적 배치 크기와 고정된 토큰 길이
+  },
+  {
+    name: "attention_mask"
+    data_type: TYPE_INT64
+    dims: [ -1, 512 ]  # 동적 배치 크기와 고정된 토큰 길이
+  },
+  {
+    name: "token_type_ids"
+    data_type: TYPE_INT64
+    dims: [ -1, 512 ]  # 동적 배치 크기와 고정된 토큰 길이
+  }
+]
+output [
+  {
+    name: "output"
+    data_type: TYPE_FP32
+    dims: [ -1, 2 ]  # 동적 배치 크기와 출력 크기
+  }
+]
+instance_group [
+  {
+    kind: KIND_CPU  # CPU에서 실행될 경우 KIND_CPU, GPU에서 실행될 경우 KIND_GPU
+  }
+]
