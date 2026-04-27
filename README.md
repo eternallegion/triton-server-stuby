@@ -125,6 +125,11 @@ dropout\_rate = 0.5
 
 ### 2단계: Triton Inference Server 배포
 
+'''bash
+https://github.com/triton-inference-server/server
+자세한 건 여기이서 확인
+'''
+
 #### 모델 리포지토리 구조 설정
 
 ```
@@ -293,7 +298,7 @@ tritonclient\[http]
 
 \---
 
-## 📝 라이선스
+## 라이선스
 
 이 프로젝트는 개인/교육 목적으로 작성되었습니다.  
 사용된 사전학습 모델 `kykim/bert-kor-base`는 해당 모델의 라이선스를 따릅니다.
